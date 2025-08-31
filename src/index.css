@@ -1,0 +1,56 @@
+
+@import "tailwindcss";
+
+
+
+
+/* index.css (add these) */
+
+.glassy-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.08),   /* deep blue very light */
+    rgba(59, 130, 246, 0.07),  /* light blue very light */
+    rgba(255, 255, 255, 0.03)  /* subtle white highlight */
+  );
+  border-radius: 18px;
+  border: 1px solid rgba(173, 216, 255, 0.12); /* faint border */
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  box-shadow: 
+    0 6px 18px rgba(0,0,0,0.14),
+    inset 0 1px 3px rgba(255, 255, 255, 0.08);
+  transition: transform .35s ease, 
+              box-shadow .35s ease, 
+              opacity .25s ease;
+  overflow: hidden;
+}
+
+/* small card hover lift (optional on desktop) */
+.glassy-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+}
+
+/* track helpers */
+.how-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+.how-card {
+  min-width: 100vw;       /* each card fills viewport width */
+  height: 70vh;           /* card height inside pinned section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.25rem;       /* tailwind p-9 ~ 36px if needed */
+}
+
+.how-card .content {
+  max-width: 820px;
+  color: rgba(17,24,39,0.95); /* gray-900 */
+}
+.how-card h3 { margin-bottom: 0.75rem; }
+.how-card p { color: rgba(55,65,81,0.9); } /* gray-700 */
